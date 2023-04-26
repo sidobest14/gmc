@@ -1,0 +1,109 @@
+Algorithm problem1 
+
+var
+set_1:Array_of_integer;
+set_2:Array_of_integer;
+sum,i:integer;
+
+begin
+
+sum:=0;
+
+// after reading the 2 sets (user input)
+
+//finding the distinc elements in set_1
+
+For i from 0 to set_1.length-1 DO
+
+	IF set_1[i] not in set_2[i] DO
+		sum:=sum+set_1[i];
+	END IF
+
+END for
+
+//finding the distinc elements in set_2
+
+For i from 0 to set_2.length-1 DO
+	
+	IF set_2[i] not in set_1[i] DO
+		sum:=sum+set_2[i];
+	END IF
+END for
+
+END
+
+
+Algorithm problem2 
+
+procedure dot_product(v1, v2: array of real; var ps: real);
+var
+  i: integer;
+begin
+  ps := 0;
+  for i from 0 to v1.length-1 do
+  begin
+    ps := ps + (v1[i] * v2[i]);
+  end;
+end;
+
+
+Procedure orthogonal_check(n)
+begin
+   for i = 0 to n-1 do
+
+      // Read input vectors v1 and v2
+
+      read v1
+      read v2
+
+      
+      // Calculate dot product of v1 and v2 using procedure "dot_product"
+      dot_product(v1, v2, res)
+      
+      // Check if dot product is zero (vectors are orthogonal)
+      if res = 0 then
+         write "The vectors are orthogonal."
+      else
+         write "The vectors are not orthogonal."
+      end if
+   end for
+end Procedure
+
+
+function dot_product(v1, v2: array of real);
+var
+  i: integer;
+  res: real;
+begin
+  res := 0;
+  for i from 0 to v1.length-1 do
+  begin
+    res := res + (v1[i] * v2[i]);
+  end;
+end;
+
+
+Procedure orthogonal_check(n)
+var
+dp:real;
+begin
+   for i = 0 to n-1 do
+
+      // Read input vectors v1 and v2
+
+      read v1
+      read v2
+
+      
+      // Calculate dot product of v1 and v2 using procedure "dot_product"
+
+      dp=dot_product(v1, v2);
+      
+      // Check if dot product is zero (vectors are orthogonal)
+      if dp = 0 then
+         write "The vectors are orthogonal."
+      else
+         write "The vectors are not orthogonal."
+      end if
+   end for
+end Procedure
