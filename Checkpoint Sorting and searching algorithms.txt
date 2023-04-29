@@ -1,0 +1,18 @@
+for i from 1 to n-1
+    j = i
+    while j > 0 and arr[j-1] > arr[j]
+        swap (arr[j],arr[j-1]);
+        j = j - 1
+	end 
+end for
+
+ex : For example, let's say we have an array arr = [5, 3, 1, 4, 2]. 
+If we're trying to insert the element at index i = 3 (which has a value of 4), 
+then we only need to consider the elements from index 0 to index i-1, which in this case are [5, 3, 1]. 
+These elements are already sorted, so we just need to find the correct position to insert the element 4 within this sorted sequence.
+
+step 1 :[5, 3, 1, 4, 2]. 
+step 2 :[5, 3, 4, 1, 2].
+step 3 :[5, 4, 3, 1, 2].
+
+the element arr[3] is in the correct position.
